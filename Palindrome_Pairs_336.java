@@ -1,3 +1,8 @@
+// data structure: trie
+// time complexity: O (n*k^2) 
+// space complexity: O (n*26) ??
+// bug 1.if (node.index >= 0) { //missed edge case = 0
+
 class Solution {
     class TrieNode {
         int index;
