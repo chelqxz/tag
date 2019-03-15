@@ -1,4 +1,11 @@
 /**
+* method 0
+* 算出有几个0 1 2， 然后在update nums array
+*/
+
+
+
+/**
 * method 1 
 *  bug1: nums[r--] = 2; what is in the end are ignored, should use swap or (store and deal with it)
 *  bug2: i <= r , wrote i < r, when i == r, r is not processed, so it need to be finished. 
