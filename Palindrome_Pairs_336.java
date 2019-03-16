@@ -1,7 +1,47 @@
-// data structure: trie
-// time complexity: O (n*k^2) 
-// space complexity: O (n*26) ??
-// bug 1.if (node.index >= 0) { //missed edge case = 0
+/**
+* method 0 brute force O(n^2 *k)
+*/
+
+class Solution {
+    public List<List<Integer>> palindromePairs(String[] words) {
+        List<List<Integer>> ans = new ArrayList<>();
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                if (i == j) continue;
+                int len1 = words[i].length();
+                int len2 = words[j].length();
+                if (len1 == len2 && j < i) continue;
+                
+                if (isPalin(words[i] + words[j], 0, len1+len2-1)) {
+                    ans.add(Arrays.asList(new Integer[]{i,j}));
+                    if (len1 == len2) 
+                        ans.add(Arrays.asList(new Integer[]{j,i}));
+                }
+                
+                
+            }
+        }
+        return ans;
+    }
+    
+    public boolean isPalin(String str, int i, int j) {
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j)) return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+}
+
+
+/**
+* data structure: trie
+* time complexity: O (n*k^2) 
+* space complexity: O (n*26) ??
+* bug 1.if (node.index >= 0) { //missed edge case = 0
+*/
+
 
 class Solution {
     class TrieNode {
