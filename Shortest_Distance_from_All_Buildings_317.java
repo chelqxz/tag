@@ -3,7 +3,10 @@
 * 代码也不是很自信，细节的如同dist 要 init to what (0 is fine), and d init to be 1. etc.
 * need to know how to choose these details
 * spicific to this question: houseReached. 
-* like what i drawed on the whiteboard, this method better for matrix sparse, O(numberOfHouses*m*n). if not sparse, tht intuitive way to traverse from available position and if reached all the house, compare the min distance mighe be better. O ((m*n)^2)
+* like what i drawed on the whiteboard, 
+this method better for matrix sparse, O(numberOfHouses*m*n). 
+if not sparse, tht intuitive way to traverse from available position 
+and if reached all the house, compare the min distance mighe be better. O ((m*n)^2)
 */
 
 class Solution {
