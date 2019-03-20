@@ -1,6 +1,7 @@
 /** 
 * bug. 1. has negative number so the way to move ptr does not work
 */
+
 class Solution {
     public int shortestSubarray(int[] A, int K) {
         int n = A.length;
@@ -11,11 +12,13 @@ class Solution {
         Deque<Integer> deque = new LinkedList<>();
         for (int y = 0; y < sum.length; y++) { 
             // bug : start with  y = 1, should be 0, example for the case [1] , 1
-            while (!deque.isEmpty() && sum[deque.peekLast()] >= sum[y]) {
+            while (!deque.isEmpty() && sum[deque.peekLast()] >= sum[y]) { // increasing as any one great than current one
+                // would never be considered
                 deque.pollLast();
             }
-            while (!deque.isEmpty() && sum[deque.getFirst()] <= sum[y] - K) {
-                ans = Math.min(ans, y-deque.removeFirst());
+            while (!deque.isEmpty() && sum[deque.getFirst()] <= sum[y] - K) { 
+                ans = Math.min(ans, y-deque.removeFirst()); // if considered for current y, 
+                // do not need to be considered by any other
             }
             deque.offerLast(y);
         }
