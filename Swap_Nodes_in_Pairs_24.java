@@ -31,12 +31,12 @@ class Solution {
             prev.next = second;
             prev = first;
             first = tmp;
-            second = (tmp == null) ? null: tmp.next;
+            second = (tmp == null) ? null: tmp.next; // edge case: two in the problem, odd or even 
         }
         if (first == null && second == null) {
-            prev.next = null;
+            prev.next = null; // even
         } else {
-            prev.next = first;
+            prev.next = first; // odd
         }
             
         
