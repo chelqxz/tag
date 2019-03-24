@@ -1,5 +1,6 @@
 // kind of a greedy solution
-
+// when cnt  <0 , add 1 to ans
+// in the end add abs(cnt) to ans
 class Solution {
     public int minAddToMakeValid(String S) {
         int ans = 0;
